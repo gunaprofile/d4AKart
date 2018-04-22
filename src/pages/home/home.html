@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding>
+  <ion-card>
+      <ion-slides autoplay="3000" loop="true" speed="3000" pager>
+        <ion-slide  *ngFor="let banner of [1,2,3,4,5]" id="bannerSlide">
+          <img src = "assets/imgs/{{banner}}.jpg" alt="Banner">
+        </ion-slide>
+      </ion-slides>
+  </ion-card>
+   <img style="margin-top:10px;" src = "assets/imgs/banner.jpg" alt="Banner"/>
+  <ion-grid>
+    <ion-row>
+      <ion-slides #productSlides>
+        <ion-slide  *ngFor="let product of products" >
+          <ion-card no-padding> 
+            <img src = "assets/imgs/{{product.featured_src}}" alt="Product Description"/>
+            <h1 padding center>{{product.title}}</h1>
+            <p padding center>{{product.short_description}}</p>
+          </ion-card>
+        </ion-slide>
+      </ion-slides>
+    </ion-row>
+  </ion-grid>
+</ion-content>
