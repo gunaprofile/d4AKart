@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { NavController, NavParams } from 'ionic-angular';
+import { ProductsByCategoryPage } from '../products-by-category/products-by-category';
 
 import { HomePage } from '../home/home';
 
@@ -11,6 +12,7 @@ export class MenuPage {
 
   homePage : any;
   categories : any[]
+  @ViewChild('content') childNavCtrl: NavController;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.homePage = HomePage
@@ -35,6 +37,9 @@ export class MenuPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MenuPage');
+  }
+  openCategoryPage(category){
+    this.childNavCtrl.setRoot(ProductsByCategoryPage, {'category' : category})
   }
 
 }
