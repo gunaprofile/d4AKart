@@ -6,12 +6,22 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-content>
+  <ion-content class="card-background-page">
+
+    <ion-card>
+      <img src="assets/imgs/rock1.jpg"/>
+      <div class="card-title">D4AKART</div>
+      <div class="card-subtitle">Keep Shopping</div>
+    </ion-card>
+
     <ion-list>
-      <button menuClose ion-item>
-        Home
-      </button>
+      <ion-item *ngFor="let category of categories" text-wrap>
+        <ion-icon [name]="category.icon" item-left large></ion-icon>
+        <h2>{{category.name}}</h2>
+        <p>{{category.description}}</p>
+      </ion-item>
     </ion-list>
+
   </ion-content>
 
 </ion-menu>
