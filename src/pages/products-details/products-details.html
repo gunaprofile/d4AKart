@@ -1,0 +1,37 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{product.title}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-card>
+  <ion-slides autoplay="3000" loop="true" speed="3000" *ngIf="product.images && product.images.length">
+    <ion-slide *ngFor="let image of product.images" id="detailSlide">
+      <img src = "assets/imgs/{{image}}" alt="Product Description"/>
+    </ion-slide>
+  </ion-slides>
+
+  <ion-card-content>
+    <ion-card-title>
+      {{product.title}}
+      <ion-chip style="margin-left:5px;" >
+        <ion-label color="danger">Category 1</ion-label>
+      </ion-chip>
+      <ion-chip style="margin-left:5px;">
+        <ion-label color="danger">Category 2</ion-label>
+      </ion-chip>
+    </ion-card-title>
+    <p [innerHTML]="product.short_description"></p>
+
+<button ion-button block outline color="danger">
+  <ion-icon name="basket"></ion-icon> Add to Cart
+</button>
+  </ion-card-content>
+
+  </ion-card>
+
+</ion-content>
