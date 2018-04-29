@@ -40,7 +40,7 @@
         <span [innerHTML]="product.short_description.substr(0,50) + '...'"></span>
         
       </p>
-      <p><span [innerHTML]="product.price"></span></p>
+      <p><span>$ {{product.price}}</span></p>
       <button ion-button icon clear item-right>
         <ion-icon name="arrow-forward"></ion-icon>
       </button>
