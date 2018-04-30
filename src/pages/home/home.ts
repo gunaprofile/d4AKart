@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { NavController, Slides, ToastController } from 'ionic-angular';
 import { ProductsDetailsPage } from '../products-details/products-details';
+import { SearchPage } from '../search/search';
 
 @Component({
   selector: 'page-home',
@@ -10,7 +11,7 @@ export class HomePage {
   
   products : any[];
   moreProducts : any[];
-
+  searchQuery : string;
   @ViewChild('productSlides') productComponentSlides : Slides;
   constructor(public navCtrl: NavController, public toastCtrl : ToastController) {
 
@@ -180,5 +181,12 @@ export class HomePage {
   }
   openProductPage(product){
     this.navCtrl.push(ProductsDetailsPage, {"product": product});
+  }
+  onSearch(event){
+
+    if(this.searchQuery.length > 0){
+      this.navCtrl.push(SearchPage,{"searchQuery" : this.searchQuery});
+    }
+
   }
 }

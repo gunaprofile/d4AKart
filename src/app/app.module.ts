@@ -10,11 +10,13 @@ import { ProductsDetailsPage } from '../pages/products-details/products-details'
 import { CartPage } from '../pages/cart/cart';
 import { SignupPage } from '../pages/signup/signup';
 import { LoginPage } from '../pages/login/login';
-import { CheckoutPage } from '../pages/checkout/checkout'
+import { CheckoutPage } from '../pages/checkout/checkout';
+import { SearchPage } from '../pages/search/search';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { IonicStorageModule } from '@ionic/storage';
+// import { OneSignal } from "@ionic-native/onesignal";
 
 
 @NgModule({
@@ -27,7 +29,8 @@ import { IonicStorageModule } from '@ionic/storage';
     CartPage,
     SignupPage,
     LoginPage,
-    CheckoutPage
+    CheckoutPage,
+    SearchPage
   ],
   imports: [
     BrowserModule,
@@ -44,11 +47,13 @@ import { IonicStorageModule } from '@ionic/storage';
     CartPage,
     SignupPage,
     LoginPage,
-    CheckoutPage
+    CheckoutPage,
+    SearchPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    // OneSignal,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
